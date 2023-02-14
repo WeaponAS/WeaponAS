@@ -36,5 +36,21 @@ def dateconv():
     return Date
     
 
-def Year():
-    pass
+def Dayname(Dayname):
+    if Dayname == 1:
+        DN = "Sunday"
+    elif Dayname ==2:
+        DN="Monday"
+    elif Dayname==3:
+        DN="Tuesday"
+    elif Dayname==4:
+        DN="Wednesday"
+    elif Dayname==5:
+        DN="Thursday"
+    elif Dayname==6:
+        DN="Friday"
+    elif Dayname==7:
+        DN="Saturday"
+    else:
+        print("Week have a only 7 Days, Maybe you are from another planet ?")
+    return DN

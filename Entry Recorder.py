@@ -27,6 +27,7 @@ while True:
         Inflow=float(input('Enter Inflow Amount : '))
         Y=c1.execute('select year(now())')
         MN=MonthName.monthname(Month)
+        D = c1.execute("select date")
         c1.execute('insert into table {}_{} values({},{},{},{},{})'.format(MN,Y,D,Paticular,NOTE,Outflow,Inflow))
     
     
