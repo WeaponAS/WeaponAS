@@ -25,15 +25,15 @@ def monthname(Date):
     elif Date==12:
         MN='December'
     else:
-        print("Month Can't go above 12 and below 1")
+        print("Are you from this planet {}th Month seriously".format(Date))
     return MN
 
 def dateconv():
-    Y=int(input('Year (YYYY): '))
+    Y = int(input("Enter Year (YYYY): "))
     M=int(input('Month (MM): '))
     D=int(input('Date (DD): '))
     Date=datetime.datetime(Y,M,D)
-    return Date
+    return Date,Y,M,D
     
 
 def Dayname(Dayname):

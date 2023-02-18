@@ -1,6 +1,7 @@
 import mysql.connector as sql
 import MonthName
-
+import time
+import datetime as date
 conn=sql.connect(host='localhost',user='root',passwd='0')
 conn.autocommit=True
 if conn.is_connected():
@@ -22,13 +23,11 @@ while True:
     if act==1:
         Paticular=input('Enter Particular : ')
         NOTE=input('Enter Note to the Account : ')
-        print("Note : enter 0 if out/inflow doesnot exist ")
         Outflow=float(input('Enter Outflow Amount : '))
         Inflow=float(input('Enter Inflow Amount : '))
-        Y=c1.execute('select year(now())')
-        MN=MonthName.monthname(Month)
-        D = c1.execute("select date")
-        c1.execute('insert into table {}_{} values({},{},{},{},{})'.format(MN,Y,D,Paticular,NOTE,Outflow,Inflow))
+        Date,Y,M,D = MonthName.dateconv()
+        MN=MonthName.monthname(M)
+        c1.execute('insert into table {}_{} values({},{},{},{},{})'.format(MN,Y,Date,Paticular,NOTE,Outflow,Inflow))
     
     
     elif act==2:
